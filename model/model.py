@@ -13,8 +13,8 @@ class Model:
 
 
     def __init__(self, var_number: int, restrictions_number: int):
-        self.__objective_function: list[float] = list()
-        self.__restrictions: list[list[float]] = list()
+        self.__objective_function: list[int] = list()
+        self.__restrictions: list[list[int]] = list()
         self.__integer: bool = False
         self.__variables_number = var_number
         self.__restrictions_number = restrictions_number
@@ -35,7 +35,7 @@ class Model:
         return self.__restrictions
 
 
-    def define_objective_function(self, objective_function: list[float]):
+    def define_objective_function(self, objective_function: list[int]):
         """
         Define a função objetiva a ser maximizada. Cada elemento da lista é um coeficiente
         para a variável com o mesmo índice.
@@ -48,7 +48,7 @@ class Model:
         self.__objective_function = objective_function
 
 
-    def add_restriction(self, restrictions: list[float]):
+    def add_restriction(self, restrictions: list[int]):
         """
         Adiciona uma restrição ao problema. A restrição impõe um limite ≤.
 

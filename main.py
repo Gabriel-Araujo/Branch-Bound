@@ -1,5 +1,3 @@
-from mip import Model, MAXIMIZE, CBC
-
 from branch_and_bound.branch_and_bound import BranchAndBound
 from fs import get_model_from
 import sys
@@ -14,7 +12,14 @@ def main():
 
     model = get_model_from(filepath)
 
-#    bb = BranchAndBound(model)
+    bb = BranchAndBound(model)
 
-    model = Model(sense=MAXIMIZE, solver_name=CBC, )
+    result = bb.solve()
+
+    print("Resultado")
+    print("Z = ", result.objective_value)
+
+    for v in result.vars:
+        print(f"{v.name} = {v.x:.2f}")
+
 main()
