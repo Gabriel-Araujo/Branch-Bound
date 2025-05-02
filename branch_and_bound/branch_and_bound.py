@@ -24,11 +24,11 @@ def find_branching_variable(variables) -> int:
         if not (abs(v.x - 0) < 1e-6 or abs(v.x - 1) < 1e-6)
     ]
 
-    closest_to_half = min(
+    index = min(
         fractional_vars,
         key=lambda i: abs(variables[i].x - 0.5)
     )
-    return closest_to_half
+    return index
 
 
 class BranchAndBound:

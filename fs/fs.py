@@ -1,5 +1,3 @@
-import string
-
 from model import Model
 
 def __transform_to_model(file) -> Model:
